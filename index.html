@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/GameFinal/estilo.css">
+    <script src="jogo.js"></script>
+    <title>Mata Monstros</title>
+    <script>
+        function iniciarGame() {
+
+            let nivel = document.getElementById('dificuldade').value
+            if (nivel === '') {
+                alert('Selecione uma dificuldade para iniciar o jogo')
+                return false
+            }
+
+            window.location.href = "app.html?" + nivel
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="inicial">
+
+            <h1>Mata</h1>
+            <h1>Monstros</h1>
+        </div>
+        <select name="niveis" id="dificuldade">
+            <option value="">--Selecione o Nivel--</option>
+            <option value="facil">FÁCIL</option>
+            <option value="medio">MÉDIO</option>
+            <option value="dificil">DIFÍCIL</option>
+        </select>
+        <div class="botao">
+            <button class="button" onclick="iniciarGame()">Iniciar Jogo</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

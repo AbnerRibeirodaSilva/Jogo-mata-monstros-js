@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jogo.js"></script>
+    <link rel="stylesheet" href="/GameFinal/estilo.css">
+    <title>Mata monstros</title>
+
+</head>
+
+<body onresize="ajustarTamanho()">
+
+    <div class="painel">
+        <div class="life">
+            <img id="l1" src="/GameFinal/imagens/coracao_cheio.png" alt="pontos de vida">
+            <img id="l2" src="/GameFinal/imagens/coracao_cheio.png" alt="pontos de vida">
+            <img id="l3" src="/GameFinal/imagens/coracao_cheio.png" alt="pontos de vida">
+        </div>
+        <div class="timer">
+            Tempo restante <span id="cronometro"></span>
+        </div>
+    </div>
+    <script>
+        document.getElementById('cronometro').innerHTML = time
+        let criarmonstros = setInterval(function() {
+            posicaoRandom()
+        }, timecreate)
+    </script>
+</body>
+
+</html>
