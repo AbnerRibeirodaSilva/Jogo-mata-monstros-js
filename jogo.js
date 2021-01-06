@@ -1,12 +1,12 @@
 //recuperando dimensoes da tela do usuario para se adequar  
-let altura = 0
-let largura = 0
-let lifes = 1
-let time = 30
+var altura = 0
+var largura = 0
+var lifes = 0
+var time = 30
 
-let timecreate = 1500
+var timecreate = 1500
 
-let nivel = window.location.search
+var nivel = window.location.search
 nivel = nivel.replace('?', '')
 
 if (nivel === 'facil') {
@@ -26,7 +26,7 @@ function ajustarTamanho() {
 ajustarTamanho()
 
 //Cronometro do jogo
-let cronometro = setInterval(function() {
+var cronometro = setInterval(function() {
     time -= 1
 
     if (time < 0) {
@@ -48,29 +48,29 @@ function posicaoRandom() {
     if (document.getElementById('bruxas')) {
         document.getElementById('bruxas').remove()
         lifes++
+        document.getElementById('l' + lifes).src = ('imagens/coracao_vazio.png')
     }
     //Remover fantasmas 
     if (document.getElementById('ghost')) {
         document.getElementById('ghost').remove()
         lifes++
+        document.getElementById('l' + lifes).src = ('imagens/coracao_vazio.png')
     }
     //Remover morcegos
     if (document.getElementById('bat')) {
         document.getElementById('bat').remove()
         lifes++
+        document.getElementById('l' + lifes).src = ('imagens/coracao_vazio.png')
     }
 
-    if (lifes > 3) {
+
+    if (lifes > 2) {
         window.location.href = 'gameOver.html'
-    } else {
-
-        document.getElementById('l' + lifes).src = ('/GameFinal/imagens/coracao_vazio.png')
-
     }
 
 
-    let eixoX = Math.floor(Math.random() * largura) - 190
-    let eixoY = Math.floor(Math.random() * altura) - 200
+    var eixoX = Math.floor(Math.random() * largura) - 190
+    var eixoY = Math.floor(Math.random() * altura) - 200
 
     eixoX = eixoX < 0 ? 0 : eixoX
     eixoY = eixoY < 0 ? 0 : eixoY
@@ -78,11 +78,11 @@ function posicaoRandom() {
 
 
     //Criando elementos "Bruxas,Fantasmas e monstros" em cordenadas aleatorias 
-    let bixos = Math.floor(Math.random() * 3)
+    var bixos = Math.floor(Math.random() * 3)
 
     if (bixos == 0) {
-        let bruxa = document.createElement('img')
-        bruxa.src = ('/GameFinal/imagens/bruxa.png')
+        var bruxa = document.createElement('img')
+        bruxa.src = ('imagens/bruxa.png')
         bruxa.className = tamanhosBruxa() + ' ' + ladoAleatorio()
         bruxa.style.left = eixoX + 'px'
         bruxa.style.top = eixoY + 'px'
@@ -97,8 +97,8 @@ function posicaoRandom() {
 
         document.body.appendChild(bruxa)
     } else if (bixos == 1) {
-        let ghost = document.createElement('img')
-        ghost.src = ('/GameFinal/imagens/ghost.png')
+        var ghost = document.createElement('img')
+        ghost.src = ('imagens/ghost.png')
         ghost.className = tamanhosGhost() + ' ' + ladoAleatorio()
         ghost.style.left = eixoX + 'px'
         ghost.style.top = eixoY + 'px'
@@ -112,8 +112,8 @@ function posicaoRandom() {
 
         document.body.appendChild(ghost)
     } else {
-        let bat = document.createElement('img')
-        bat.src = ('/GameFinal/imagens/morcego.png')
+        var bat = document.createElement('img')
+        bat.src = ('imagens/morcego.png')
         bat.className = tamanhosBat() + ' ' + ladoAleatorio()
         bat.style.left = eixoX + 'px'
         bat.style.top = eixoY + 'px'
@@ -133,7 +133,7 @@ function posicaoRandom() {
 //Criação de bruxas com tamanhos aleatorios
 
 function tamanhosBruxa() {
-    let classe1 = Math.floor(Math.random() * 3)
+    var classe1 = Math.floor(Math.random() * 3)
 
     switch (classe1) {
         case 0:
@@ -148,7 +148,7 @@ function tamanhosBruxa() {
 //Criação de fantasmas com tamanhos aleatorios
 
 function tamanhosGhost() {
-    let classe2 = Math.floor(Math.random() * 3)
+    var classe2 = Math.floor(Math.random() * 3)
 
     switch (classe2) {
         case 0:
@@ -161,7 +161,7 @@ function tamanhosGhost() {
 }
 //Criação de morcegos com tamanhos aleatorios
 function tamanhosBat() {
-    let classe3 = Math.floor(Math.random() * 3)
+    var classe3 = Math.floor(Math.random() * 3)
 
     switch (classe3) {
         case 0:
@@ -178,7 +178,7 @@ function tamanhosBat() {
 console.log(ladoAleatorio())
 
 function ladoAleatorio() {
-    let lados = Math.floor(Math.random() * 2)
+    var lados = Math.floor(Math.random() * 2)
 
     switch (lados) {
         case 0:
