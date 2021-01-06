@@ -1,9 +1,9 @@
 html {
-    cursor: url(/GameFinal/imagens/mira.png)20 20, auto;
+    cursor: url(imagens/mira.png)20 20, auto;
 }
 
 body {
-    background-image: url(/GameFinal/imagens/cenario.jpg);
+    background-image: url(imagens/cenario.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 98vh;
@@ -107,7 +107,7 @@ body {
     margin: auto;
 }
 
-.button {
+.geralbutton {
     margin-top: 5vh;
     font-family: 'Bangers', cursive;
     font-size: 130%;
